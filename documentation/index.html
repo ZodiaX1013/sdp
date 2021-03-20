@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Marwa El-Manawy <marwa@elmanawy.info>" />
+        <title>Gusto</title>
+        <link href="assets/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/style.css" rel="stylesheet">
+        <script src="assets/jquery.min.js" ></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <script>
+            $(document).ready(function () {
+                $(document).on("scroll", onScroll);
+
+                //smoothscroll
+                $('a[href^="#"]').on('click', function (e) {
+                    e.preventDefault();
+                    $(document).off("scroll");
+
+                    $('a').each(function () {
+                        $(this).removeClass('active');
+                    })
+                    $(this).addClass('active');
+
+                    var target = this.hash,
+                            menu = target;
+                    $target = $(target);
+                    $('html, body').stop().animate({
+                        'scrollTop': $target.offset().top + 2
+                    }, 500, 'swing', function () {
+                        window.location.hash = target;
+                        $(document).on("scroll", onScroll);
+                    });
+                });
+            });
+
+            function onScroll(event) {
+                var scrollPos = $(document).scrollTop();
+                $('.nav a').each(function () {
+                    var currLink = $(this);
+                    var refElement = $(currLink.attr("href"));
+                    if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                        $('.nav a').removeClass("active");
+                        currLink.addClass("active");
+                    }
+                    else {
+                        currLink.removeClass("active");
+                    }
+                });
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <div class="container-fluid">
+            <div class="navbar navbar-default navbar-fixed-top">
+
+                <div class="navbar-inner menu_area">
+                    <div class="container">
+                        <a class="logo" href="http://elmanawy.info/" target="_blank" style="color: 000; font-weight: bold;">Gusto</a>
+                        <ul class="nav">
+                            <li><a class="active" href="#introduction">Introduction <span class="sr-only">(current)</span></a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#system">System</a></li>
+                            <li><a href="#requirements">Requirements</a></li>
+                            <li><a href="#installation">Installation</a></li>
+                            <li><a href="#start">Getting Started</a></li>
+                            <li><a href="#modules">Modules</a></li>
+                            <li><a href="#change_log">Change Log</a></li>
+                            <li><a href="#support">Support Desk</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container content">
+
+
+                <div class="" id="introduction">
+                    <h1 class="page-header">Introduction</h1>
+                    <div class="intro-doc">
+                        <p>
+                            <strong style="color: #8dc63f;">Gusto</strong>
+                            is a powerful platform to manage recipes for food specific websites, that doesn't require any experience on web development, very easy to use and customize
+                        </p>
+                        <ul>
+                            <li><strong>Item Name: </strong> Gusto - Recipe Management System</li>
+                            <li><strong>Item Version: </strong> v 1.0</li>
+                            <li><strong>Created: </strong> 20/09/2018</li>
+                            <li><strong>Author:  </strong> <a href="https://elmanawy.info/">Marwa El-Manawy</a></li>
+                            <li><strong>Support Questions:  </strong> <a href="mailto:support@elmanawy.info">support@elmanawy.info</a></li>
+                        </ul>
+                    </div>
+                    <p>
+                        <strong>Hi there!</strong>
+                        Thank you for buying my web application. Hope it will help to improve your business or impress your clients and it provides recipes for all users.<br>
+                        This documentation is to help you regarding each step of customization. <br> <br>
+                    </p>
+                    <span style="color: red; font-weight: bold;">Please read the documentation carefully to understand how this script is made and how to edit this properly and how you install script. </span> 
+                    <br><br>
+                    <p><b>Thank You ..</b> </p>
+                </div>
+
+                <!-- About section -->
+                <div class="block" id="about">
+                    <h1 class="page-header">About</h1>
+                    <p>
+                        <b>Now, Lets get started to tell you about Gusto.</b> <br>
+                        <b>Gusto</b>
+                        s a powerful platform to manage recipes for food specific websites. 
+                        It comes with a plethora of features that make managing the system super easy. 
+                        Users can register accounts and create their own recipes or you can use the application to manage your own and share them with your friends. 
+                        The web application is a great way to build your website, very simple to install and customize and we offer great support, That don't require and experience on web development.
+                        Take a look at this wonderful script and you will be impressed even more! Enjoy!                        <br>
+
+                    </p>
+                    <p>
+                        Don't hesitate to contact me if you have inquiry or suggestions, and support at:
+                        <br>
+                        <a href="mailto:support@elmanawy.info">support@elmanawy.info</a>
+                    </p>
+                </div>
+
+                <!-- Features section -->
+                <div class="block" id="features">
+                    <h1 class="page-header">Features</h1>
+
+                    <div class="row placeholders">
+                        <div class="col-xs-6 col-sm-3 placeholder">
+                            <span class="img-responsive">
+                                <i class="fa fa-mobile-phone"></i>
+                            </span>
+                            <h4>100% Responsive Design</h4>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 placeholder">
+                            <span class="img-responsive">
+                                <i class="fa fa-umbrella"></i>
+                            </span>
+                            <h4>Clean Coding</h4>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 placeholder">
+                            <span class="img-responsive">
+                                <i class="fa fa-flask"></i>
+                            </span>
+                            <h4>Easy Customization</h4>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 placeholder">
+                            <span class="img-responsive">
+                                <i class="fa fa-comments-o"></i>
+                            </span>
+                            <h4>Great Support</h4>
+                        </div>
+                    </div>
+
+                    <ul>
+                        <li>
+                            <strong>Security</strong>
+                            <ul>
+                                <li>Totally secured system (SQL injection, XSS, CSRF)</li>
+                                <li>Built on powerful CodeIgniter Framework that has been tried and tested by millions of developers.</li>
+                                <li>Passwords are encrypted using PHPass library to make sure your data is safe.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>User & Registration System</strong> 
+                            <ul>
+                                <li>Users can register for an account using the quick and easy register Popup.</li>
+                                <li>Login System comes with a Forgotten Password, to allow users to reset their password via email.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Recipe Builder</strong>
+                            <ul>
+                                <li>Members / Admin add unlimited recipes.</li>
+                                <li>Add recipe category, descriptions, Ingredients , video, unlimited multi upload images, featured image, cooking time, people serves, and more .....</li>
+                                <li>SEO optimized for recipes using meta keywords and meta tags.</li>
+                                <li>Allow anyone to share recipe on social media (Facebook, twitter, google+, ..)</li>
+                                <li>Comments and react on it using Disqus.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Members</strong>
+                            <ul>
+                                <li>Any register user can login/ forget password.</li>
+                                <li>Having awesome <a href="http://elmanawy.info/demo/gusto/profile/1-gusto" target="_blank">profile</a> include member information and his recipes.</li>
+                                <li>Mange or update his information in profile settings (country, name, username, gender, user profile, ...).</li>
+                                <li>CRUD (Create, Read, Update, Delete) recipe with more details(featured image, multi upload unlimited images for recipes, description, video,Ingredients, an more amazing details.. ).</li>
+                                <li>Comment on other user <a href="http://elmanawy.info/demo/gusto/recipe/Happy-Shrimp889" target="_blank">recipes</a>.</li>
+                                <li>Search on website with category or recipe name.</li>
+                                <li>Share recipe on social media (Facebook, twitter, google+, ..).</li>
+                                <li>See other other members <a href="http://elmanawy.info/demo/gusto/profile/1-gusto" target="_blank">profile</a>.</li>
+                                <li>Can follow the new recipes added by register on website subscribe form.</li>
+                                <li>Read, share, and comment (with facebook plugin) on <a href="http://elmanawy.info/demo/gusto/tricks" target="_blank">blog</a> posts.</li>
+                                <li>Contact with support using <a href="http://elmanawy.info/demo/gusto/contact" target="_blank">contact</a> form and contact information.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Admin Panel</strong>
+                            <ul>
+                                <li>Flexible control panel system with full options.</li>
+                                <li>Only admin role can login admin panel.</li>
+                                <li>Change website settings(name, logo, favicon, timezone, site description,...).</li>
+                                <li>Change website SEO settings (meta keywords, meta description).</li>
+                                <li>Change Contact information (email, phone,...).</li>
+                                <li>Unlimited slides images related to the recipe.</li>
+                                <li>Change social media pages.</li>
+                                <li>Manage Members (Edit, Delete, Add and view member information) and change their member role (Regular member, admin).</li>
+                                <li>Manage recipe categories (add, edit, delete, view).</li>
+                                <li>Mange recipes (Add, Edit, Delete, and approve member recipe).</li>
+                                <li>Approve member recipes to appear on website.</li>
+                                <li>Can able/ disable recipe appearing.</li>
+                                <li>Mange topics (add, edit, delete, view).</li>
+                                <li>Admin can set topics as public/private/registered users.</li>
+                                <li>Manage ADS and select its location dynamically otherwise google ads or custom ads images on website.</li>
+                                <li>Can view/ delete users subscribed.</li>
+                                <li>Manage sliders that appears on website (add, edit, delete, view).</li>
+                                <li>Totally with this admin panel can manage and control every thing appear in website with full option.</li>
+                                <li>Google Anaytics tracking.</li>
+                                <li>Google Recaptcha.</li>
+                                <li>Admin can view/delete/export newsletters emails.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Trendy website interface included.</strong>
+                            <ul>
+                                <li>Home page with
+                                    <ul>
+                                        <li>Dynamic slider images.</li>
+                                        <li>Widgets for popular recipes, popular authors, counter of pages of social media and  simple search</li>
+                                        <li>latest recipes added</li>
+                                        <li>Ajax Subscribe form</li>
+                                    </ul>
+                                </li>
+                                <li>Single page for recipes category included its category and advanced search.</li>
+                                <li>Single awesome page for recipes included plethora details.</li>
+                                <li>User Profile included all details about author and his recipes.</li>
+                                <li>Tips and tricks page include admin posts</li>
+                                <li>single page for trip and trick.</li>
+                                <li>Contact form with recaptcha to make your client reach you easily.</li>
+                                <li>Login/ register/ forget password modal.</li>
+                                <li>Amazing Dashboard for register user include setting page, user recipes and page for managing recipe.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Other Features</strong>
+                            <ul>
+                                <li>Easy to install and usability(without any coding knowledge needed).</li>
+                                <li>Awesome Design for Website and admin panel</li>
+                                <li>Fully Responsive for Website and admin panel</li>
+                                <li>Clean Code with hight performance.</li>
+                                <li>Easy Customization</li>
+                                <li>Friendly with SEO.</li>
+                                <li>High performance.</li>
+                                <li>More features will coming up.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Requirements section -->
+                <div class="block" id="system">
+                    <h1 class="page-header">System</h1>
+                    <ul>
+                        <li>Backend Framework: Built on CodeIgniter</li>
+                        <li>Frontend Framework: Built on Bootstrap</li>
+                        <li>Requires PHP 5.6+</li>
+                        <li>Supports MySQL, Mysqli.</li>
+                        <li>Supports SMTP Email, PHP Mail()</li>
+                    </ul>
+                </div>
+
+                <!-- Requirements section -->
+                <div class="block" id="requirements">
+                    <h1 class="page-header">Requirements</h1>
+                    <p>
+                        You will need the following softwares to customize this template. <br><br>
+                    </p>
+                    1- Code Editing Software (eg: Netbeans, Sublime Text or Notepad)<br>
+                    2- Web Browser for testing (eg: Google Chrome or Mozilla Firefox)<br>
+                    3- FTP Tool to upload files to Server (eg: FileZilla)<br>
+                </div>
+
+                <!-- Installation section -->
+                <div class="block" id="installation">
+                    <h1 class="page-header">Installation</h1>
+
+                    <span style="color: red; font-weight: bold;">Please read the documentation carefully to understand how this script is made and how to edit this properly and how you install script. </span> 
+                    <br>
+                    This script based on <a href="http://getbootstrap.com/" class="links">bootstrap</a> framework for design using ( HTML, CSS, Javascript, JQuery ), and script based on <a href="https://www.codeigniter.com/" class="links">codeigniter</a> framework using ( PHP, MySql ) language .
+
+                    <p>You just need to follow this steps to keep an eye on your new website: </p>
+
+                    <h2 class="inside-title">1- Place files: You need to login your cPanel or whatever you're using to reach your server, Then upload the following folder content (root) to your public_html with your file manger or FTP.</h2>
+                    <p>you can also watch this if you find this difficult </p>
+                    <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/yvKwwYh2jr0" width="560"></iframe>
+                    <br><br>
+
+                    <h2 class="inside-title">2- Grap and upload database:</h2>
+                    <p>You can find the database file in (root) folder under the name of (database.sql), now you should visit your PHPmyadmin client on your dear server</p>
+                    <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/YbIn--iNmKE" width="560"></iframe>                        <br><br>
+
+                    <h4>Quick steps:</h4>
+                    1- change your configuration data that located in <b>application/config/database.php</b><br><br>
+                    <img src="assets/images/database.png"><br><br>
+                    2- You must setup email configration, Follow this path:<br><br>
+                    <b>application/config/email.php</b> here you can add you email data.<br><br>
+                    <img src="assets/images/email.png">
+
+                    <br><br>
+
+                    <h2 class="inside-title">For translation Language </h2><br>
+                    There is 2 languages English and Arabic you can choose your language from admin panel settings, You can edit the translations in this paths:
+                    <b>application/language/english/..</b> or <b>application/language/arabic/..</b> <br><br>
+                    <img src="assets/images/choose-lang.png"><br><br>
+                    <img src="assets/images/edit-lang.png"><br><br>
+                    <br><br>
+
+                    <h2 class="inside-title">To integrate Disqus on your website.</h2>
+
+                    <ol class="list-inline">
+                        <li>
+                            <b>Step 1:</b> Follow this link to guide you how to install it. 
+                            <a href="https://help.disqus.com/installation/universal-embed-code">https://help.disqus.com/installation/universal-embed-code</a><br>
+                        </li>
+                        <li>
+                            <b>Step 2:</b> after integrate you will get embeded code like the code in image below <br><br>
+                            <img src="assets/images/disqus_code.jpg" /><br>
+                        </li>
+                        <li>
+                            <b>Step 3:</b> Then copy the Disqus username in this url and adding it in your admin panel setting in Disquss username field. <br><br>
+                            <img src="assets/images/disqus_admin.jpg" />
+                        </li>
+
+                        <li>
+                            <b>Step 4:</b> Finally you will get this awesome comments form and reactions in your website. <br><br>
+                            <img src="assets/images/comment.png" />
+                        </li>
+                    </ol>  
+
+                    <br><br>
+
+                    <h2 class="inside-title">Google Analytics:</h2>
+                    1- go to <a hre="https://analytics.google.com to create site">https://analytics.google.com to create site</a><br>
+                    2- go to admin area, Settings -> Google analytics <b>Tracking ID</b> and copy it Then paste it in your website admin panel.<br>
+                    <br><br>
+                    <h2 class="inside-title"> 4- Integrate Google Recaptcha </h2>
+                    <b>Step 1:</b> Registering for Google reCAPTCHA <a href="https://www.google.com/recaptcha/admin/site/337503377">here</a><br>
+                    <img src="assets/images/recaptcha1.jpg"><br><br>
+                    <b>Step 2:</b> You will get the site key and secret key<br>
+                    <img src="assets/images/recaptcha2.png"><br>
+                    <img src="assets/images/recaptcha3.png"><br><br>
+                    <b>Step 3:</b> Adding the site key and secret key to google recaptch setting at admin panel.<br>
+                    <img src="assets/images/recaptcha4.png"><br>
+                </div>
+
+
+                <!-- Getting stat section -->
+                <div class="block" id="start">
+                    <h1 class="page-header">Getting Start</h1>
+                    <p>You just need to follow this steps to keep an eye on your new website: </p>
+                    <br>
+                    <p>
+                        go to this link before you go on: 
+                        <br><br>
+
+                        http://yourDomainName.com/admin<br>
+
+                        <br>
+                        <img class="module-pics" src="assets/images/login.png">
+                        <br>
+
+                        Type your admin username and password: <br><br>
+
+                        <strong>Email:</strong> admin@admin.com<br>
+
+                        <strong>Password:</strong> 123456<br>
+                        <br>
+
+                        and follow those instructions 
+                    </p>
+
+                </div>
+
+
+                <!-- Modules section -->
+                <div class="block" id="modules">
+                    <h1 class="page-header">Modules</h1>
+                    <p>Here there we provide you for many modules: </p>
+                    <br>
+                    <ul>
+                        <li><strong>1- Dashboard </strong>
+                            <br>
+                            In this modules there was summary for the main modules in script (eg. users, visitors, services, blog posts).
+                            <img class="module-pics" src="assets/images/dashboard.png">
+                            <br>
+                        </li>
+
+                        <li><strong>2- Users</strong>
+                            <br>
+                            This module for users who can login in backend to control The CMS, you can edit,add delete user.
+                            <img class="module-pics" src="assets/images/user.png">
+                            <br>
+                        </li>
+
+                        <li><strong>3- Settings</strong>
+                            <br>
+                            This module for settings included seo tab has meta key words and meta description, contact tab included phone, address, whatsapp,...., and social media tab included facebook, twitter,....you can edit in this inputs. 
+                            <br>
+                        </li>
+
+                        <li><strong>4- sliders</strong>
+                            <br>
+                            This module for sliders that contain slides that appear on the home page site , you can edit,add delete slide.
+
+                            <br>
+                        </li>
+
+
+                        <li><strong>5- Tricks and Trips</strong>
+                            <br>
+                            This module for Blog that contain Blog posts appear on your website , you can edit,add delete Post.
+                            <br>
+                        </li>
+                        <li><strong>6- Icons</strong>
+                            <br>
+                            This module for Icons.
+                            <br>
+                        </li>
+
+                        <li><strong>7- Categories</strong>
+                            <br>
+                            This module for Categories for your recipes , you can edit,add delete category.
+                            <br>
+                        </li>
+                        <li><strong>7- Recipes</strong>
+                            <br>
+                            This module for recipes food , you can edit,add delete recipe.
+                            <br>
+                            you can add all about recipe
+                            <br>
+                            <b>For example</b><br>
+                            <img class="module-pics" src="assets/images/recipe.png"> <br>
+                            <b>Notice: </b> You have to types of image the feature image that appear in each page and the other images that appear in recipe page
+                            <br>
+                            Admin can add the other images in one time and sort it 
+                        </li>
+                        <li><strong>8- Pages module</strong> </li>
+                        <li><strong>9- Newsletters Module</strong></li>
+                    </ul>
+                </div>
+
+                <div class="block" id="change_log">
+                    <h1 class="page-header">Change Log</h1>
+                    <div style="margin-bottom: 20px;">
+                        <b>Version 3.2 Released (1 October 2019):</b> <br>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            1- Admin can set topics (Tips & Tricks) as Public, Private and registered users.<br>
+                            2- Adding tags option to Topic(Tips & Tricks).<br>
+                            3- Admin can export list of newsletters emails.<br>
+                            4- Recaptcha for contact us form.<br>
+                        </p>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            <b>Upgrade from Version 3.1 to 3.2</b><br>
+                            1- Run the queries provided to your database from phpMyAdmin.<br>
+                            ALTER TABLE `blog` ADD COLUMN `status` ENUM('0','1','2') DEFAULT '0'   NULL AFTER `created`;<br>
+                            ALTER TABLE `blog` ADD COLUMN `tags` TEXT NULL AFTER `status`;<br>
+                            INSERT INTO `settings` (`key`) VALUES ('google_key'); <br>
+                            INSERT INTO `settings` (`key`) VALUES ('google_secret_key');<br>
+                            <br> 
+                            2- Extract and upload source files to your server.<br>
+                            3- Update the database.php file located into "root/application/config/database.php"<br>
+                            4- Update the email.php file located into "root/application/config/email.php"
+                            5- You are done.
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <b>Version 3.1 Released (21 August 2019):</b> <br>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            1- Adding Google Analytics.<br>
+                            2- Fixed style issues in mobile.<br>
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <b>Version 3.0 Released (10 June 2019):</b> <br>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            <b>New Features:</b><br>
+                            1- Translation Option, We adding (English and Arabic) Language.<br>
+                            2- Supported RTL, You can choose direction (RTL Or LTR)from admin panel to display the direction of website based on your language.<br>
+                            3- Created Pages module (Create unlimited page ex. about us, terms & condition, privacy,..).<br>
+                            4- adding disqus username from admin panel also you can control displaying comments.<br>
+                            5- Adding meta twitter and og.<br>
+                        </p>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            <b>Updated:</b><br>
+                            1- Remove meta keywords from table, It's not become useful for SEO.<br>
+                            2- Adding created time for newsletters.<br>
+                            3- Adding more social media and removing google plus.<br>
+                            4- Changing datatype of calories and serves.<br>
+                            5- Fixing design issue.<br>
+                            6- Adding Contact Email that received the contact us messages.<br>
+                        </p>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            <b>You need to Run this queries in phpmyadmin:</b><br>
+                            INSERT INTO `settings` (`key`, `value`) VALUES ('contact_form_email', '');<br>
+                            INSERT INTO `settings` (`key`, `value`) VALUES ('disqus_user', '');<br>
+                            INSERT INTO `settings` (`key`, `value`) VALUES ('direction', 'ltr');<br>
+                            INSERT INTO `settings` (`key`, `value`) VALUES ('twitter_image', '');<br>
+                            INSERT INTO `settings` (`key`, `value`) VALUES ('reddit', '');<br>
+                            INSERT INTO `settings` (`key`, `value`) VALUES ('flickr', '');<br>
+                            INSERT INTO `settings` (`key`, `value`) VALUES ('snapchat', '');<br>
+                            INSERT INTO `settings` (`key`, `value`) VALUES ('whatsapp', '');<br>
+                            DELETE FROM `settings` WHERE `key` = 'google_plus'; <br>
+                            DELETE FROM `settings` WHERE `key` = 'meta_keywords'; <br>
+                            ALTER TABLE `newsletters` ADD COLUMN `created` DATETIME NULL AFTER `email`;<br>
+                            ALTER TABLE `recipes` CHANGE `serves` `serves` VARCHAR(5) NOT NULL; <br>
+                            ALTER TABLE `recipes` CHANGE `calories` `calories` VARCHAR(5) NOT NULL; <br>
+                            ALTER TABLE `recipes` DROP COLUMN `meta_keywords`;<br>
+                            ALTER TABLE `recipes` DROP COLUMN `meta_keywords`;<br>
+                            ALTER TABLE `categories` DROP COLUMN `meta_keywords`;<br>
+                            ALTER TABLE `blog` DROP COLUMN `meta_keywords`;<br>
+                            CREATE TABLE `pages`( `page_id` INT NOT NULL AUTO_INCREMENT, `title` VARCHAR(300), `permalink` VARCHAR(300), `content` TEXT, PRIMARY KEY (`page_id`) ); <br>
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <b>Version 2.2:</b> <br>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            1- New Feature: Custom Print Option for recipe.
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <b>Version 2.1:</b> <br>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            1- Advertisements widgets for tricks page, single trick page and recipe page <br>
+                            <b>Run queries in phpmyadmin</b><br>
+                            UPDATE `ad_locations` SET `name` = 'Home Side 1' WHERE `ad_location_id` = '5'; <br>
+                            INSERT INTO `ad_locations` (`name`) VALUES ('Home Side 2'); <br>
+                            UPDATE `ad_locations` SET `name` = 'Recipe Side 1' WHERE `ad_location_id` = '6'; <br>
+                            INSERT INTO `ad_locations` (`name`) VALUES ('Recipe Side 2'); <br>
+                            INSERT INTO `ad_locations` (`name`) VALUES ('Recipe Footer'); <br>
+                            UPDATE `ad_locations` SET `name` = 'Trick Side 1' WHERE `ad_location_id` = '7'; <br>
+                            INSERT INTO `ad_locations` (`name`) VALUES ('Trick Side 2'); <br>
+                            INSERT INTO `ad_locations` (`name`) VALUES ('Trick Footer'); <br>
+                            INSERT INTO `ad_locations` (`name`) VALUES ('Tricks Side 1'); <br>
+                            INSERT INTO `ad_locations` (`name`) VALUES ('Tricks Side 2'); <br>
+                        </p>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            2- Latest tricks and most visited tricks widgets for trick page.
+                        </p>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            3- adding text editor for tricks module.
+                        </p>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            4- Using <strong>DISQUS</strong> to comment and react for trick post and recipe.<br>
+                            <b> To integrate Disqus on your website follow this link explain the steps.</b><br>
+                            <a href="https://disqus.com/features/engage/">https://disqus.com/features/engage/</a><br>
+                            <a href="https://disqus.com/features/engage/">https://disqus.com/features/engage/</a><br>
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <b>Version 2.0:</b> <br>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            1- Delete Confirmation for each module records.
+                        </p>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            2- Dynamic SMTP User for forget password email.<br>
+                            <b>make sure that webmaster email added in your contact info is the same SMTP user in this file application/config/email.php</b><br>
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <b>Version 1.5.1:</b> <br>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            1- Fixing Security Bug at ADS Module.
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <b>Version 1.5:</b> <br>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            1- Fixing Bug at Ads.
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <b>Version 1.4:</b> <br>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            1- Update UX for home page.
+                        </p>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            2- Add advanced search for home page.
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <b>Version 1.3:</b> <br>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            1- Email Template for forget password.
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <b>Version 1.2:</b> <br>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            1- SSL Supported(Check the URL in your database).
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <b>Version 1.1:</b> <br>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            1- Pagination in admin panel modules.
+                        </p>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            2- Filter for appearance table of users that having 2 pages for admins and normal users in admin panel.
+                        </p>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            3- Admin/ normal user can set their email appear in their profile.<br><br>
+                            <b>Run this Query in your phpMyadmin</b><br><br>
+                            <span style="display: block; background-color: #f1f1f1; padding-left: 10px; border: 1px solid #dedede;">
+                                ALTER TABLE `users` <br>  
+                                ADD COLUMN `email_appear` TINYINT(1) NULL;
+                            </span>
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <b>Version 1.0:</b> <br>
+                        <p style="background-color: #f9f9f9; padding: 5px;">
+                            1- Initial Version
+                        </p>
+                    </div>
+
+                </div>
+                <div class="block" id="support">
+                    <h1 class="page-header">Support</h1>
+                    <p>
+                        - If you have any questions feel free to contact us at support@elmanawy.info <br>
+                        - If you need any modifications just contact support at support@elmanawy.info <br>
+                    </p>
+                    <br>
+
+                    <strong>Reach US: </strong><br>
+                    <a target="_blank" href="https://elmanawy.info/marwa/store"><img src="https://elmanawy.info/demo/banners/social_icons/marwa.png"></a>
+                    <a target="_blank" href="https://www.facebook.com/marwa.elmanawy.info"><img src="https://elmanawy.info/demo/banners/social_icons/facebook.png"></a>
+                    <a target="_blank" href="https://twitter.com/marwa_elmanawy"><img src="https://elmanawy.info/demo/banners/social_icons/twitter.png"></a>
+                    <a target="_blank" href="https://plus.google.com/+marwaelmenawy"><img src="https://elmanawy.info/demo/banners/social_icons/google.png"></a>
+                    <a target="_blank" href="https://www.linkedin.com/in/marwa-el-manawy-b76344a0"><img src="https://elmanawy.info/demo/banners/social_icons/linkedin.png"></a>
+                    <a target="_blank" href="https://www.youtube.com/channel/UCTSXnKoLgfZZk2MN_jLUOnA"><img src="https://elmanawy.info/demo/banners/social_icons/youtube.png"></a>
+                    <a target="_blank" href="https://www.instagram.com/marwa.elmanawy"><img src="https://elmanawy.info/demo/banners/social_icons/instagram.png"></a>
+                    <a target="_blank" href="https://github.com/marwaelmanawy"><img src="https://elmanawy.info/demo/banners/social_icons/github.png"></a>
+                    <br><br>
+                    <p><b>Best Regards, <a href="https://elmanawy.info/marwa/store">Marwa El-Manawy</a></b></p>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
